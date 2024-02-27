@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Input Example</title>
+    <style>
+        /* Optional styling */
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput">
+    <button onclick="showNumber()">Calculate</button>
+    
+    <div id="output"></div>
+
+    <script>
+        function showNumber() {
+            // Get the value entered by the user
+            var userInput = document.getElementById("numberInput").value;
+
+            // Display the value on the webpage
+            // var outputDiv = document.getElementById("output");
+            // outputDiv.innerHTML = "You entered: " + userInput;
+            
+            var outputDiv = document.getElementById("output");
+            for (var i = 0; i < userInput; i++) {
+                if (i % 3 == 0)
+                {
+                    outputDiv.innerHTML = "Fizz" + "<br>";
+                }
+                else if (i % 5 == 0)
+                {
+                    outputDiv.innerHTML = "Buzz" + "<br>";
+                }
+                else if (i % 3 == 0 && i % 5 == 0)
+                {
+                    outputDiv.innerHTML = "FizzBuzz" + "<br>";
+                }
+                else
+                {
+                    outputDiv.innerHTML = i + "<br>";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
